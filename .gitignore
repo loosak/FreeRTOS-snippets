@@ -32,6 +32,6 @@
 *.app
 
 #esp-idf
-*/build/
-*/sdkconfig
-*/sdkconfig.old
+#*/build/
+#*/sdkconfig
+#*/sdkconfig.old
