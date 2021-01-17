@@ -10,5 +10,5 @@ Lite
 cd freertos-snippets/task-notifications
 idf.py set-target [ esp32 | esp32s2 ]
 idf.py build
-idf.py -p /dec/cu.[SLAB_USBtoUART | ] flash monitor
+idf.py -p /dev/cu.[SLAB_USBtoUART | ] flash monitor
 ```
