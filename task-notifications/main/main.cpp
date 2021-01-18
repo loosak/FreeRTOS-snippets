@@ -41,14 +41,12 @@ extern "C" void app_main(void)
     esp_log_level_set(TAG, ESP_LOG_VERBOSE);
     ESP_LOGI(TAG, "Running at %s:%d", __FILE__, __LINE__);
 
-    xTaskCreate(myTask1, "task1", 4096, (void*) 0, tskIDLE_PRIORITY, &myTask1Handle);
-    
     /* Create the task, storing the handle. */
     BaseType_t xReturned = xTaskCreate(
                     myTask1,                /* Function that implements the task. */
                     "task1",                /* Text name for the task. */
                     4096,                   /* Stack size in words, not bytes. */
-                    ( void * ) 0,           /* Parameter passed into the task. */
+                    (void *) 0,           /* Parameter passed into the task. */
                     tskIDLE_PRIORITY,       /* Priority at which the task is created. */
                     &myTask1Handle );       /* Used to pass out the created task's handle. */
 
@@ -58,8 +56,8 @@ extern "C" void app_main(void)
         ESP_LOGI(TAG, "xReturned == pdPASS");
         //vTaskDelete( xHandle );
     }
-    xTaskCreate(myTask2, "task2", 4096, (void*) 0, tskIDLE_PRIORITY, &myTask2Handle);
+
+    xTaskCreate(myTask2, "task2", 4096, (void *) 0, tskIDLE_PRIORITY, &myTask2Handle);
 
     //vTaskStartScheduler();
-
 }
